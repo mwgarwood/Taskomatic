@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70037F35174571A200014723 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70037F34174571A200014723 /* UIKit.framework */; };
+		70037F37174571A200014723 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70037F36174571A200014723 /* Foundation.framework */; };
+		70037F39174571A200014723 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70037F38174571A200014723 /* CoreGraphics.framework */; };
+		70037F3F174571A200014723 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70037F3D174571A200014723 /* InfoPlist.strings */; };
+		70037F41174571A200014723 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F40174571A200014723 /* main.m */; };
+		70037F45174571A200014723 /* ToMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F44174571A200014723 /* ToMAppDelegate.m */; };
+		70037F47174571A200014723 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 70037F46174571A200014723 /* Default.png */; };
+		70037F49174571A200014723 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70037F48174571A200014723 /* Default@2x.png */; };
+		70037F4B174571A200014723 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70037F4A174571A200014723 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		70037F31174571A200014723 /* TaskoMatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskoMatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70037F34174571A200014723 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		70037F36174571A200014723 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		70037F38174571A200014723 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		70037F3C174571A200014723 /* TaskoMatic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaskoMatic-Info.plist"; sourceTree = "<group>"; };
+		70037F3E174571A200014723 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70037F40174571A200014723 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70037F42174571A200014723 /* TaskoMatic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaskoMatic-Prefix.pch"; sourceTree = "<group>"; };
+		70037F43174571A200014723 /* ToMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToMAppDelegate.h; sourceTree = "<group>"; };
+		70037F44174571A200014723 /* ToMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToMAppDelegate.m; sourceTree = "<group>"; };
+		70037F46174571A200014723 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		70037F48174571A200014723 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		70037F4A174571A200014723 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70037F2E174571A100014723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70037F35174571A200014723 /* UIKit.framework in Frameworks */,
+				70037F37174571A200014723 /* Foundation.framework in Frameworks */,
+				70037F39174571A200014723 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70037F28174571A000014723 = {
+			isa = PBXGroup;
+			children = (
+				70037F3A174571A200014723 /* TaskoMatic */,
+				70037F33174571A200014723 /* Frameworks */,
+				70037F32174571A200014723 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70037F32174571A200014723 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70037F31174571A200014723 /* TaskoMatic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70037F33174571A200014723 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70037F34174571A200014723 /* UIKit.framework */,
+				70037F36174571A200014723 /* Foundation.framework */,
+				70037F38174571A200014723 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70037F3A174571A200014723 /* TaskoMatic */ = {
+			isa = PBXGroup;
+			children = (
+				70037F43174571A200014723 /* ToMAppDelegate.h */,
+				70037F44174571A200014723 /* ToMAppDelegate.m */,
+				70037F3B174571A200014723 /* Supporting Files */,
+			);
+			path = TaskoMatic;
+			sourceTree = "<group>";
+		};
+		70037F3B174571A200014723 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70037F3C174571A200014723 /* TaskoMatic-Info.plist */,
+				70037F3D174571A200014723 /* InfoPlist.strings */,
+				70037F40174571A200014723 /* main.m */,
+				70037F42174571A200014723 /* TaskoMatic-Prefix.pch */,
+				70037F46174571A200014723 /* Default.png */,
+				70037F48174571A200014723 /* Default@2x.png */,
+				70037F4A174571A200014723 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70037F30174571A100014723 /* TaskoMatic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70037F4E174571A300014723 /* Build configuration list for PBXNativeTarget "TaskoMatic" */;
+			buildPhases = (
+				70037F2D174571A100014723 /* Sources */,
+				70037F2E174571A100014723 /* Frameworks */,
+				70037F2F174571A100014723 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskoMatic;
+			productName = TaskoMatic;
+			productReference = 70037F31174571A200014723 /* TaskoMatic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70037F29174571A000014723 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ToM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Neterata;
+			};
+			buildConfigurationList = 70037F2C174571A100014723 /* Build configuration list for PBXProject "TaskoMatic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 70037F28174571A000014723;
+			productRefGroup = 70037F32174571A200014723 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70037F30174571A100014723 /* TaskoMatic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70037F2F174571A100014723 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70037F3F174571A200014723 /* InfoPlist.strings in Resources */,
+				70037F47174571A200014723 /* Default.png in Resources */,
+				70037F49174571A200014723 /* Default@2x.png in Resources */,
+				70037F4B174571A200014723 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70037F2D174571A100014723 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70037F41174571A200014723 /* main.m in Sources */,
+				70037F45174571A200014723 /* ToMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		70037F3D174571A200014723 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70037F3E174571A200014723 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70037F4C174571A300014723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70037F4D174571A300014723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70037F4F174571A300014723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TaskoMatic/TaskoMatic-Prefix.pch";
+				INFOPLIST_FILE = "TaskoMatic/TaskoMatic-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		70037F50174571A300014723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TaskoMatic/TaskoMatic-Prefix.pch";
+				INFOPLIST_FILE = "TaskoMatic/TaskoMatic-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70037F2C174571A100014723 /* Build configuration list for PBXProject "TaskoMatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70037F4C174571A300014723 /* Debug */,
+				70037F4D174571A300014723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70037F4E174571A300014723 /* Build configuration list for PBXNativeTarget "TaskoMatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70037F4F174571A300014723 /* Debug */,
+				70037F50174571A300014723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70037F29174571A000014723 /* Project object */;
+}
