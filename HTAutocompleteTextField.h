@@ -17,6 +17,8 @@
 - (NSString*)textField:(HTAutocompleteTextField*)textField
    completionForPrefix:(NSString*)prefix
             ignoreCase:(BOOL)ignoreCase;
+@optional
+- (void)didAcceptAutocompletion:(NSString *)autoString;
 
 @end
 

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ToMAboutViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end

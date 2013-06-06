@@ -7,7 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+@class ToMItem;
+@class ToMCacheEntry;
+
+
+extern NSString * const ToMStoreUpdateNotification;
+
 
 @interface ToMItemStore : NSObject
+{
+    NSMutableArray *allItems;
+    NSMutableArray *allCacheEntries;
+    NSManagedObjectContext *context;
+    NSManagedObjectModel *model;
+}
+
++ (ToMItemStore *)sharedStore;
+
+- (NSArray *)allItems;
+- (void)loadAllItems;
+- (BOOL)saveChanges;
+- (void)removeItem:(ToMItem *)p cache:(BOOL)cache;
+- (void)moveItemAtIndex:(int)from toIndex:(int)to;
+- (ToMItem *)createItem;
+- (double)allocateOrderValue:(int)index;
+- (NSArray *)allCacheEntries;
+- (void)insertCacheEntry:(ToMItem *)item;
+- (void)removeCacheEntry:(ToMCacheEntry *)p;
+
+
 
 @end

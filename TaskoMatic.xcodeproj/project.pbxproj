@@ -13,9 +13,44 @@
 		70037F3F174571A200014723 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70037F3D174571A200014723 /* InfoPlist.strings */; };
 		70037F41174571A200014723 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F40174571A200014723 /* main.m */; };
 		70037F45174571A200014723 /* ToMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F44174571A200014723 /* ToMAppDelegate.m */; };
-		70037F47174571A200014723 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 70037F46174571A200014723 /* Default.png */; };
-		70037F49174571A200014723 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70037F48174571A200014723 /* Default@2x.png */; };
 		70037F4B174571A200014723 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70037F4A174571A200014723 /* Default-568h@2x.png */; };
+		70037F52174579FC00014723 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70037F51174579FC00014723 /* CoreData.framework */; };
+		70037F5517457AD800014723 /* TaskoMatic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70037F5317457AD800014723 /* TaskoMatic.xcdatamodeld */; };
+		70037F611745863B00014723 /* ToMItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F601745863B00014723 /* ToMItemsViewController.m */; };
+		70037F64174588B700014723 /* ToMItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F63174588B700014723 /* ToMItemStore.m */; };
+		70037F6917459C9F00014723 /* ToMItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F6817459C9E00014723 /* ToMItemCell.m */; };
+		70037F6F17466C6900014723 /* ToMDetailItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70037F6D17466C6900014723 /* ToMDetailItemViewController.m */; };
+		70037F7017466C6900014723 /* ToMDetailItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70037F6E17466C6900014723 /* ToMDetailItemViewController.xib */; };
+		700B46EB175541F100A9CF65 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 700B46EA175541F000A9CF65 /* Default.png */; };
+		700B46ED1755420F00A9CF65 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700B46EC1755420F00A9CF65 /* Default@2x.png */; };
+		70533D58175CE85B003AC045 /* ToMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70533D56175CE85A003AC045 /* ToMAboutViewController.m */; };
+		70533D59175CE85B003AC045 /* ToMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70533D57175CE85B003AC045 /* ToMAboutViewController.xib */; };
+		70533D60175E916B003AC045 /* ToMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70533D5F175E916B003AC045 /* ToMNavigationController.m */; };
+		70533D6A175EAEC2003AC045 /* info1.png in Resources */ = {isa = PBXBuildFile; fileRef = 70533D69175EAEC2003AC045 /* info1.png */; };
+		70533D6C175EAED1003AC045 /* work1.png in Resources */ = {isa = PBXBuildFile; fileRef = 70533D6B175EAED1003AC045 /* work1.png */; };
+		70533D6E175EAEDD003AC045 /* blocks1.png in Resources */ = {isa = PBXBuildFile; fileRef = 70533D6D175EAEDD003AC045 /* blocks1.png */; };
+		70533D70175EB9C0003AC045 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 70533D6F175EB9C0003AC045 /* Icon.png */; };
+		70533D72175EB9CA003AC045 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70533D71175EB9C9003AC045 /* Icon@2x.png */; };
+		70533D7B175F6AC6003AC045 /* ToMExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70533D79175F6AC5003AC045 /* ToMExplanationViewController.m */; };
+		70533D7C175F6AC6003AC045 /* ToMExplanationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70533D7A175F6AC6003AC045 /* ToMExplanationViewController.xib */; };
+		70533DE2175F70F5003AC045 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70533DDF175F70F4003AC045 /* MJPopupBackgroundView.m */; };
+		70533DE3175F70F5003AC045 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70533DE1175F70F4003AC045 /* UIViewController+MJPopupViewController.m */; };
+		705B6D981746ED7600A8EBA7 /* ToMItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70037F65174598D200014723 /* ToMItemCell.xib */; };
+		705B6DA2174ACF8000A8EBA7 /* DateTimePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 705B6DA0174ACF8000A8EBA7 /* DateTimePickerController.xib */; };
+		705B6DA5174AD1EB00A8EBA7 /* DateTimePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B6DA4174AD1EB00A8EBA7 /* DateTimePickerController.m */; };
+		705B6DA9174BCE4E00A8EBA7 /* DurationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B6DA7174BCE4E00A8EBA7 /* DurationPickerController.m */; };
+		705B6DAA174BCE4E00A8EBA7 /* DurationPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 705B6DA8174BCE4E00A8EBA7 /* DurationPickerController.xib */; };
+		705B6DB3174D579600A8EBA7 /* ToMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B6DB2174D579600A8EBA7 /* ToMItem.m */; };
+		7075CC09175AC59B0020A32C /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = 7075CC08175AC59B0020A32C /* Hypno.png */; };
+		7075CC0B175AC5B90020A32C /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = 7075CC0A175AC5B90020A32C /* Time.png */; };
+		708AF6AC17582B9B00B7C47E /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 708AF6AB17582B9B00B7C47E /* Default-Landscape~ipad.png */; };
+		708AF6AE17582BAA00B7C47E /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 708AF6AD17582BAA00B7C47E /* Default-Portrait~ipad.png */; };
+		708AF6B31758E06700B7C47E /* HTAutocompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6B01758E06600B7C47E /* HTAutocompleteTextField.m */; };
+		708AF6B8175928F800B7C47E /* ToMCacheEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6B7175928F800B7C47E /* ToMCacheEntry.m */; };
+		708AF6C5175A2F9000B7C47E /* ToMCacheEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6C4175A2F8F00B7C47E /* ToMCacheEntriesViewController.m */; };
+		708AF6C8175A3F5200B7C47E /* ToMCacheEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */; };
+		708AF6CA175A3F9100B7C47E /* ToMCacheEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */; };
+		70FD9E7F1754FEFE00C6ED90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FD9E7E1754FEFE00C6ED90 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +64,63 @@
 		70037F42174571A200014723 /* TaskoMatic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaskoMatic-Prefix.pch"; sourceTree = "<group>"; };
 		70037F43174571A200014723 /* ToMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToMAppDelegate.h; sourceTree = "<group>"; };
 		70037F44174571A200014723 /* ToMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToMAppDelegate.m; sourceTree = "<group>"; };
-		70037F46174571A200014723 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		70037F48174571A200014723 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		70037F4A174571A200014723 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		70037F51174579FC00014723 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		70037F5417457AD800014723 /* TaskoMatic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskoMatic.xcdatamodel; sourceTree = "<group>"; };
+		70037F5F1745863B00014723 /* ToMItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItemsViewController.h; sourceTree = "<group>"; };
+		70037F601745863B00014723 /* ToMItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItemsViewController.m; sourceTree = "<group>"; };
+		70037F62174588B700014723 /* ToMItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItemStore.h; sourceTree = "<group>"; };
+		70037F63174588B700014723 /* ToMItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItemStore.m; sourceTree = "<group>"; };
+		70037F65174598D200014723 /* ToMItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMItemCell.xib; sourceTree = "<group>"; };
+		70037F6717459C9E00014723 /* ToMItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItemCell.h; sourceTree = "<group>"; };
+		70037F6817459C9E00014723 /* ToMItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItemCell.m; sourceTree = "<group>"; };
+		70037F6C17466C6900014723 /* ToMDetailItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMDetailItemViewController.h; sourceTree = "<group>"; };
+		70037F6D17466C6900014723 /* ToMDetailItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMDetailItemViewController.m; sourceTree = "<group>"; };
+		70037F6E17466C6900014723 /* ToMDetailItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMDetailItemViewController.xib; sourceTree = "<group>"; };
+		700B46EA175541F000A9CF65 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		700B46EC1755420F00A9CF65 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		70533D55175CE85A003AC045 /* ToMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMAboutViewController.h; sourceTree = "<group>"; };
+		70533D56175CE85A003AC045 /* ToMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMAboutViewController.m; sourceTree = "<group>"; };
+		70533D57175CE85B003AC045 /* ToMAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMAboutViewController.xib; sourceTree = "<group>"; };
+		70533D5E175E916B003AC045 /* ToMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMNavigationController.h; sourceTree = "<group>"; };
+		70533D5F175E916B003AC045 /* ToMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMNavigationController.m; sourceTree = "<group>"; };
+		70533D69175EAEC2003AC045 /* info1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info1.png; sourceTree = SOURCE_ROOT; };
+		70533D6B175EAED1003AC045 /* work1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = work1.png; sourceTree = SOURCE_ROOT; };
+		70533D6D175EAEDD003AC045 /* blocks1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blocks1.png; sourceTree = SOURCE_ROOT; };
+		70533D6F175EB9C0003AC045 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		70533D71175EB9C9003AC045 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		70533D78175F6AC5003AC045 /* ToMExplanationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMExplanationViewController.h; sourceTree = "<group>"; };
+		70533D79175F6AC5003AC045 /* ToMExplanationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMExplanationViewController.m; sourceTree = "<group>"; };
+		70533D7A175F6AC6003AC045 /* ToMExplanationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMExplanationViewController.xib; sourceTree = "<group>"; };
+		70533DDE175F70F4003AC045 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		70533DDF175F70F4003AC045 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		70533DE0175F70F4003AC045 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		70533DE1175F70F4003AC045 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		70533DEB175F9528003AC045 /* TaskoMatic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TaskoMatic.entitlements; sourceTree = "<group>"; };
+		705B6DA0174ACF8000A8EBA7 /* DateTimePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTimePickerController.xib; sourceTree = "<group>"; };
+		705B6DA3174AD1BA00A8EBA7 /* DateTimePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimePickerController.h; sourceTree = "<group>"; };
+		705B6DA4174AD1EB00A8EBA7 /* DateTimePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimePickerController.m; sourceTree = "<group>"; };
+		705B6DA6174BCE4D00A8EBA7 /* DurationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurationPickerController.h; sourceTree = "<group>"; };
+		705B6DA7174BCE4E00A8EBA7 /* DurationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationPickerController.m; sourceTree = "<group>"; };
+		705B6DA8174BCE4E00A8EBA7 /* DurationPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DurationPickerController.xib; sourceTree = "<group>"; };
+		705B6DB1174D579600A8EBA7 /* ToMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItem.h; sourceTree = "<group>"; };
+		705B6DB2174D579600A8EBA7 /* ToMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItem.m; sourceTree = "<group>"; };
+		7075CC08175AC59B0020A32C /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hypno.png; sourceTree = "<group>"; };
+		7075CC0A175AC5B90020A32C /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Time.png; sourceTree = "<group>"; };
+		708AF6AA1757AE6200B7C47E /* TaskoMatic 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TaskoMatic 2.xcdatamodel"; sourceTree = "<group>"; };
+		708AF6AB17582B9B00B7C47E /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		708AF6AD17582BAA00B7C47E /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		708AF6AF1758E06600B7C47E /* HTAutocompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAutocompleteTextField.h; sourceTree = "<group>"; };
+		708AF6B01758E06600B7C47E /* HTAutocompleteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAutocompleteTextField.m; sourceTree = "<group>"; };
+		708AF6B51759271E00B7C47E /* TaskoMatic 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TaskoMatic 3.xcdatamodel"; sourceTree = "<group>"; };
+		708AF6B6175928F700B7C47E /* ToMCacheEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntry.h; sourceTree = "<group>"; };
+		708AF6B7175928F800B7C47E /* ToMCacheEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntry.m; sourceTree = "<group>"; };
+		708AF6C3175A2F8F00B7C47E /* ToMCacheEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntriesViewController.h; sourceTree = "<group>"; };
+		708AF6C4175A2F8F00B7C47E /* ToMCacheEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntriesViewController.m; sourceTree = "<group>"; };
+		708AF6C6175A3F5100B7C47E /* ToMCacheEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntryCell.h; sourceTree = "<group>"; };
+		708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntryCell.m; sourceTree = "<group>"; };
+		708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMCacheEntryCell.xib; sourceTree = "<group>"; };
+		70FD9E7E1754FEFE00C6ED90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FD9E7F1754FEFE00C6ED90 /* QuartzCore.framework in Frameworks */,
+				70037F52174579FC00014723 /* CoreData.framework in Frameworks */,
 				70037F35174571A200014723 /* UIKit.framework in Frameworks */,
 				70037F37174571A200014723 /* Foundation.framework in Frameworks */,
 				70037F39174571A200014723 /* CoreGraphics.framework in Frameworks */,
@@ -51,6 +142,49 @@
 		70037F28174571A000014723 = {
 			isa = PBXGroup;
 			children = (
+				70533DE4175F713E003AC045 /* 3rd Party */,
+				70533D78175F6AC5003AC045 /* ToMExplanationViewController.h */,
+				70533D79175F6AC5003AC045 /* ToMExplanationViewController.m */,
+				70533D7A175F6AC6003AC045 /* ToMExplanationViewController.xib */,
+				70533D71175EB9C9003AC045 /* Icon@2x.png */,
+				70533D6F175EB9C0003AC045 /* Icon.png */,
+				708AF6C3175A2F8F00B7C47E /* ToMCacheEntriesViewController.h */,
+				708AF6C4175A2F8F00B7C47E /* ToMCacheEntriesViewController.m */,
+				708AF6B6175928F700B7C47E /* ToMCacheEntry.h */,
+				708AF6B7175928F800B7C47E /* ToMCacheEntry.m */,
+				708AF6AD17582BAA00B7C47E /* Default-Portrait~ipad.png */,
+				708AF6AB17582B9B00B7C47E /* Default-Landscape~ipad.png */,
+				700B46EC1755420F00A9CF65 /* Default@2x.png */,
+				700B46EA175541F000A9CF65 /* Default.png */,
+				70FD9E7E1754FEFE00C6ED90 /* QuartzCore.framework */,
+				705B6DA4174AD1EB00A8EBA7 /* DateTimePickerController.m */,
+				705B6DA3174AD1BA00A8EBA7 /* DateTimePickerController.h */,
+				70533D55175CE85A003AC045 /* ToMAboutViewController.h */,
+				70533D56175CE85A003AC045 /* ToMAboutViewController.m */,
+				70533D57175CE85B003AC045 /* ToMAboutViewController.xib */,
+				705B6DA0174ACF8000A8EBA7 /* DateTimePickerController.xib */,
+				70037F6C17466C6900014723 /* ToMDetailItemViewController.h */,
+				70037F6D17466C6900014723 /* ToMDetailItemViewController.m */,
+				70037F6E17466C6900014723 /* ToMDetailItemViewController.xib */,
+				705B6DA6174BCE4D00A8EBA7 /* DurationPickerController.h */,
+				705B6DA7174BCE4E00A8EBA7 /* DurationPickerController.m */,
+				705B6DA8174BCE4E00A8EBA7 /* DurationPickerController.xib */,
+				70037F5F1745863B00014723 /* ToMItemsViewController.h */,
+				70037F601745863B00014723 /* ToMItemsViewController.m */,
+				70533D5E175E916B003AC045 /* ToMNavigationController.h */,
+				70533D5F175E916B003AC045 /* ToMNavigationController.m */,
+				70037F65174598D200014723 /* ToMItemCell.xib */,
+				708AF6C6175A3F5100B7C47E /* ToMCacheEntryCell.h */,
+				708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */,
+				708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */,
+				70037F6717459C9E00014723 /* ToMItemCell.h */,
+				70037F6817459C9E00014723 /* ToMItemCell.m */,
+				70037F62174588B700014723 /* ToMItemStore.h */,
+				70037F63174588B700014723 /* ToMItemStore.m */,
+				70037F5317457AD800014723 /* TaskoMatic.xcdatamodeld */,
+				705B6DB1174D579600A8EBA7 /* ToMItem.h */,
+				705B6DB2174D579600A8EBA7 /* ToMItem.m */,
+				70037F51174579FC00014723 /* CoreData.framework */,
 				70037F3A174571A200014723 /* TaskoMatic */,
 				70037F33174571A200014723 /* Frameworks */,
 				70037F32174571A200014723 /* Products */,
@@ -78,8 +212,14 @@
 		70037F3A174571A200014723 /* TaskoMatic */ = {
 			isa = PBXGroup;
 			children = (
+				70533DEB175F9528003AC045 /* TaskoMatic.entitlements */,
 				70037F43174571A200014723 /* ToMAppDelegate.h */,
 				70037F44174571A200014723 /* ToMAppDelegate.m */,
+				70533D6D175EAEDD003AC045 /* blocks1.png */,
+				70533D6B175EAED1003AC045 /* work1.png */,
+				70533D69175EAEC2003AC045 /* info1.png */,
+				7075CC0A175AC5B90020A32C /* Time.png */,
+				7075CC08175AC59B0020A32C /* Hypno.png */,
 				70037F3B174571A200014723 /* Supporting Files */,
 			);
 			path = TaskoMatic;
@@ -92,11 +232,22 @@
 				70037F3D174571A200014723 /* InfoPlist.strings */,
 				70037F40174571A200014723 /* main.m */,
 				70037F42174571A200014723 /* TaskoMatic-Prefix.pch */,
-				70037F46174571A200014723 /* Default.png */,
-				70037F48174571A200014723 /* Default@2x.png */,
 				70037F4A174571A200014723 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70533DE4175F713E003AC045 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				70533DDE175F70F4003AC045 /* MJPopupBackgroundView.h */,
+				70533DDF175F70F4003AC045 /* MJPopupBackgroundView.m */,
+				70533DE0175F70F4003AC045 /* UIViewController+MJPopupViewController.h */,
+				70533DE1175F70F4003AC045 /* UIViewController+MJPopupViewController.m */,
+				708AF6AF1758E06600B7C47E /* HTAutocompleteTextField.h */,
+				708AF6B01758E06600B7C47E /* HTAutocompleteTextField.m */,
+			);
+			name = "3rd Party";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,10 +302,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705B6D981746ED7600A8EBA7 /* ToMItemCell.xib in Resources */,
 				70037F3F174571A200014723 /* InfoPlist.strings in Resources */,
-				70037F47174571A200014723 /* Default.png in Resources */,
-				70037F49174571A200014723 /* Default@2x.png in Resources */,
 				70037F4B174571A200014723 /* Default-568h@2x.png in Resources */,
+				70037F7017466C6900014723 /* ToMDetailItemViewController.xib in Resources */,
+				705B6DA2174ACF8000A8EBA7 /* DateTimePickerController.xib in Resources */,
+				705B6DAA174BCE4E00A8EBA7 /* DurationPickerController.xib in Resources */,
+				700B46EB175541F100A9CF65 /* Default.png in Resources */,
+				700B46ED1755420F00A9CF65 /* Default@2x.png in Resources */,
+				708AF6AC17582B9B00B7C47E /* Default-Landscape~ipad.png in Resources */,
+				708AF6AE17582BAA00B7C47E /* Default-Portrait~ipad.png in Resources */,
+				708AF6CA175A3F9100B7C47E /* ToMCacheEntryCell.xib in Resources */,
+				7075CC09175AC59B0020A32C /* Hypno.png in Resources */,
+				7075CC0B175AC5B90020A32C /* Time.png in Resources */,
+				70533D59175CE85B003AC045 /* ToMAboutViewController.xib in Resources */,
+				70533D6A175EAEC2003AC045 /* info1.png in Resources */,
+				70533D6C175EAED1003AC045 /* work1.png in Resources */,
+				70533D6E175EAEDD003AC045 /* blocks1.png in Resources */,
+				70533D70175EB9C0003AC045 /* Icon.png in Resources */,
+				70533D72175EB9CA003AC045 /* Icon@2x.png in Resources */,
+				70533D7C175F6AC6003AC045 /* ToMExplanationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +334,23 @@
 			files = (
 				70037F41174571A200014723 /* main.m in Sources */,
 				70037F45174571A200014723 /* ToMAppDelegate.m in Sources */,
+				70037F5517457AD800014723 /* TaskoMatic.xcdatamodeld in Sources */,
+				70037F611745863B00014723 /* ToMItemsViewController.m in Sources */,
+				70037F64174588B700014723 /* ToMItemStore.m in Sources */,
+				70037F6917459C9F00014723 /* ToMItemCell.m in Sources */,
+				70037F6F17466C6900014723 /* ToMDetailItemViewController.m in Sources */,
+				705B6DA5174AD1EB00A8EBA7 /* DateTimePickerController.m in Sources */,
+				705B6DA9174BCE4E00A8EBA7 /* DurationPickerController.m in Sources */,
+				705B6DB3174D579600A8EBA7 /* ToMItem.m in Sources */,
+				708AF6B31758E06700B7C47E /* HTAutocompleteTextField.m in Sources */,
+				708AF6B8175928F800B7C47E /* ToMCacheEntry.m in Sources */,
+				708AF6C5175A2F9000B7C47E /* ToMCacheEntriesViewController.m in Sources */,
+				708AF6C8175A3F5200B7C47E /* ToMCacheEntryCell.m in Sources */,
+				70533D58175CE85B003AC045 /* ToMAboutViewController.m in Sources */,
+				70533D60175E916B003AC045 /* ToMNavigationController.m in Sources */,
+				70533D7B175F6AC6003AC045 /* ToMExplanationViewController.m in Sources */,
+				70533DE2175F70F5003AC045 /* MJPopupBackgroundView.m in Sources */,
+				70533DE3175F70F5003AC045 /* UIViewController+MJPopupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,9 +429,11 @@
 		70037F4F174571A300014723 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TaskoMatic/TaskoMatic.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskoMatic/TaskoMatic-Prefix.pch";
 				INFOPLIST_FILE = "TaskoMatic/TaskoMatic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -256,9 +442,11 @@
 		70037F50174571A300014723 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TaskoMatic/TaskoMatic.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskoMatic/TaskoMatic-Prefix.pch";
 				INFOPLIST_FILE = "TaskoMatic/TaskoMatic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -283,8 +471,24 @@
 				70037F50174571A300014723 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70037F5317457AD800014723 /* TaskoMatic.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				708AF6AA1757AE6200B7C47E /* TaskoMatic 2.xcdatamodel */,
+				708AF6B51759271E00B7C47E /* TaskoMatic 3.xcdatamodel */,
+				70037F5417457AD800014723 /* TaskoMatic.xcdatamodel */,
+			);
+			currentVersion = 708AF6B51759271E00B7C47E /* TaskoMatic 3.xcdatamodel */;
+			path = TaskoMatic.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 70037F29174571A000014723 /* Project object */;
 }

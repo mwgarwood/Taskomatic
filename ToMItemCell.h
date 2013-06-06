@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ToMItemCell : NSObject
+@interface ToMItemCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end

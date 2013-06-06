@@ -6,7 +6,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="schedLate" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
-        <attribute name="schedTime" optional="YES" transient="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="schedTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>

@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface ToMItemsViewController : NSObject
+@class ToMItem;
+
+@interface ToMItemsViewController : UITableViewController 
+{
+    CALayer *progressLine;
+}
+
+@property (nonatomic, strong) ToMItem *editItem;
+
+- (void)addNewItem:(id)sender;
+- (void)rescheduleItems;
+- (void)reinsertItem:(ToMItem *)item;
+- (void)adjustItemAtIndex:(int)index;
 
 @end

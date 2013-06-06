@@ -7,7 +7,34 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DateTimePickerController.h"
+#import "DurationPickerController.h"
+#import "HTAutocompleteTextField.h"
 
-@interface ToMDetailItemViewController : UIViewController
+@class ToMItem;
+
+@interface ToMDetailItemViewController : UIViewController <UITextFieldDelegate, UIPopoverControllerDelegate, DateTimePickerControllerDelegate, DurationPickerControllerDelegate, HTAutocompleteDataSource>
+{
+    __weak IBOutlet HTAutocompleteTextField *nameField;
+    __weak IBOutlet UIButton *startButton;
+    __weak IBOutlet UIButton *endButton;
+    __weak IBOutlet UIButton *durationButton;
+    __weak IBOutlet UISwitch *schedSoonSwitch;
+    UIPopoverController *popOver;
+    id picker;
+    NSArray *allCacheEntries;
+    BOOL wasCancelled;
+}
+
+- (id)initForNewItem:(BOOL)isNew;
+
+@property (nonatomic, strong) ToMItem *item;
+@property (nonatomic, copy) void (^dismissBlock)(void);
+
+- (IBAction)backgroundTapped:(id)sender;
+- (IBAction)showDateTimePicker:(id)sender;
+- (IBAction)showDurationPicker:(id)sender;
+- (void)updateDateDisplay;
+- (void)updateDurationDisplay;
 
 @end

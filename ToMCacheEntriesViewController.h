@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToMCacheEntriesViewController : UIViewController
+@interface ToMCacheEntriesViewController : UITableViewController
 
 @end

@@ -124,7 +124,6 @@ static NSObject<HTAutocompleteDataSource> *DefaultAutocompleteDataSource = nil;
 
         if ([self commitAutocompleteText]) {
             // Only notify if committing autocomplete actually changed the text.
-        
 
             // This is necessary because committing the autocomplete text changes the text field's text, but for some reason UITextField doesn't post the UITextFieldTextDidChangeNotification notification on its own
             [[NSNotificationCenter defaultCenter] postNotificationName:UITextFieldTextDidChangeNotification
@@ -218,7 +217,18 @@ static NSObject<HTAutocompleteDataSource> *DefaultAutocompleteDataSource = nil;
         self.autocompleteString = @"";
         [self updateAutocompleteLabel];
     }
-    return ![currentText isEqualToString:self.text];
+    if ([currentText isEqualToString:self.text])
+    {
+        return NO;
+    }
+    else
+    {
+        if ([[self delegate] respondsToSelector:@selector(didAcceptAutocompletion:)])
+        {
+            [[self delegate] performSelector:@selector(didAcceptAutocompletion:) withObject:[self text]];
+        }
+        return YES;
+    }
 }
 
 - (void)forceRefreshAutocompleteText
