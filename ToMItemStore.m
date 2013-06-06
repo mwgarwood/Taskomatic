@@ -40,14 +40,17 @@ NSString * const ToMStoreUpdateNotification = @"ToMStoreUpdateNotification";
         model = [NSManagedObjectModel mergedModelFromBundles:nil];
         NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
         
-        NSMutableDictionary *options = [NSMutableDictionary dictionary];
+        NSMutableDictionary *options = nil;
+        NSURL *dbURL;
+#ifdef ICLOUD_NOT_FLAKEY
+        options = [NSMutableDictionary dictionary];
         [options setObject:[NSNumber numberWithBool:YES] forKey:NSMigratePersistentStoresAutomaticallyOption];
         [options setObject:[NSNumber numberWithBool:YES] forKey:NSInferMappingModelAutomaticallyOption];
         
         NSFileManager *fm = [NSFileManager defaultManager];
         NSURL *ubContainer = [fm URLForUbiquityContainerIdentifier:nil];
-        NSURL *dbURL;
-        if (ubContainer)
+        int cloudSupported = [[NSUserDefaults standardUserDefaults] integerForKey:@"TaskoMaticCloudSupportPrefKey"];
+        if (ubContainer && cloudSupported >= 0)
         {
             [options setObject:@"taskomatic" forKey:NSPersistentStoreUbiquitousContentNameKey];
             [options setObject:ubContainer forKey:NSPersistentStoreUbiquitousContentURLKey];
@@ -57,13 +60,21 @@ NSString * const ToMStoreUpdateNotification = @"ToMStoreUpdateNotification";
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCloud Disabled" message:@"Your device does not support iCloud. Cloud operaton diabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
+            if (cloudSupported == 0)
+            {
+                //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iCloud Disabled" message:@"Your device does not support iCloud. Cloud operation diabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                //[alert show];
+                [[NSUserDefaults standardUserDefaults] setInteger:-1 forKey:@"TaskoMaticCloudSupportPrefKey"];
+            }
             NSString *dbPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
             dbPath = [dbPath stringByAppendingPathComponent:@"tasks.db"];
             dbURL = [NSURL fileURLWithPath:dbPath];
         }
-        
+#else
+        NSString *dbPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        dbPath = [dbPath stringByAppendingPathComponent:@"tasks.db"];
+        dbURL = [NSURL fileURLWithPath:dbPath];
+#endif
         NSError *error = nil;
         if (![psc addPersistentStoreWithType:NSSQLiteStoreType
                                configuration:nil URL:dbURL options:options error:&error])
