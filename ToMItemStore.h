@@ -36,6 +36,7 @@ extern NSString * const ToMStoreUpdateNotification;
 - (NSArray *)allCacheEntries;
 - (void)insertCacheEntry:(ToMItem *)item;
 - (void)removeCacheEntry:(ToMCacheEntry *)p;
+- (void)insertCacheEntryWithName:(NSString *)name minutes:(int)duration;
 
 
 

@@ -2,7 +2,7 @@
 //  ToMItem.h
 //  TaskoMatic
 //
-//  Created by Mike Garwood on 5/22/13.
+//  Created by Mike Garwood on 6/10/13.
 //  Copyright (c) 2013 Neterata. All rights reserved.
 //
 
@@ -13,11 +13,14 @@
 @interface ToMItem : NSManagedObject
 
 @property (nonatomic) int32_t duration;
+@property (nonatomic) BOOL enableNotif;
 @property (nonatomic) NSTimeInterval endTime;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic) NSTimeInterval notifScheduled;
 @property (nonatomic) double order;
-@property (nonatomic) NSTimeInterval startTime;
-@property (nonatomic) NSTimeInterval schedTime;
 @property (nonatomic) BOOL schedLate;
+@property (nonatomic) NSTimeInterval schedTime;
+@property (nonatomic) NSTimeInterval startTime;
+@property (nonatomic) BOOL completed;
 
 @end

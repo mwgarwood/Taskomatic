@@ -40,13 +40,11 @@ NSString * const ToMStoreUpdateNotification = @"ToMStoreUpdateNotification";
         model = [NSManagedObjectModel mergedModelFromBundles:nil];
         NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
         
-        NSMutableDictionary *options = nil;
         NSURL *dbURL;
-#ifdef ICLOUD_NOT_FLAKEY
-        options = [NSMutableDictionary dictionary];
+        NSMutableDictionary *options = [NSMutableDictionary dictionary];
         [options setObject:[NSNumber numberWithBool:YES] forKey:NSMigratePersistentStoresAutomaticallyOption];
         [options setObject:[NSNumber numberWithBool:YES] forKey:NSInferMappingModelAutomaticallyOption];
-        
+#ifdef ICLOUD_NOT_FLAKEY        
         NSFileManager *fm = [NSFileManager defaultManager];
         NSURL *ubContainer = [fm URLForUbiquityContainerIdentifier:nil];
         int cloudSupported = [[NSUserDefaults standardUserDefaults] integerForKey:@"TaskoMaticCloudSupportPrefKey"];
@@ -79,7 +77,7 @@ NSString * const ToMStoreUpdateNotification = @"ToMStoreUpdateNotification";
         if (![psc addPersistentStoreWithType:NSSQLiteStoreType
                                configuration:nil URL:dbURL options:options error:&error])
         {
-            [NSException raise:@"Open (with iCloud) failed" format:@"Reason: %@", [error localizedDescription]];
+            [NSException raise:@"Open failed" format:@"Reason: %@", [error localizedDescription]];
         }
         
         context = [[NSManagedObjectContext alloc] init];
@@ -152,27 +150,33 @@ NSString * const ToMStoreUpdateNotification = @"ToMStoreUpdateNotification";
 
 - (void)insertCacheEntry:(ToMItem *)item
 {
-    if (!allCacheEntries)
-    {
-        [self allCacheEntries];
-    }
     if ([[[item name] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0)
     {
         return;
+    }
+    [self insertCacheEntryWithName:[item name] minutes:[item duration]];
+}
+
+- (void)insertCacheEntryWithName:(NSString *)name minutes:(int)duration
+{
+    
+    if (!allCacheEntries)
+    {
+        [self allCacheEntries];
     }
     ToMCacheEntry *cacheEntry;
     for (int i = 0; i < [allCacheEntries count]; i++)
     {
         cacheEntry = [allCacheEntries objectAtIndex:i];
-        switch ([[item name] caseInsensitiveCompare:[cacheEntry name]]) {
+        switch ([name caseInsensitiveCompare:[cacheEntry name]]) {
             case NSOrderedSame:
-                [cacheEntry setName:[item name]];
-                [cacheEntry setDuration:[item duration]];
+                [cacheEntry setName:name];
+                [cacheEntry setDuration:duration];
                 return;
             case NSOrderedAscending:
                 cacheEntry = [NSEntityDescription insertNewObjectForEntityForName:@"ToMCacheEntry" inManagedObjectContext:context];
-                [cacheEntry setName:[item name]];
-                [cacheEntry setDuration:[item duration]];
+                [cacheEntry setName:name];
+                [cacheEntry setDuration:duration];
                 [allCacheEntries insertObject:cacheEntry atIndex:i];
                 return;
             default:
@@ -180,8 +184,8 @@ NSString * const ToMStoreUpdateNotification = @"ToMStoreUpdateNotification";
         }
     }
     cacheEntry = [NSEntityDescription insertNewObjectForEntityForName:@"ToMCacheEntry" inManagedObjectContext:context];
-    [cacheEntry setName:[item name]];
-    [cacheEntry setDuration:[item duration]];
+    [cacheEntry setName:name];
+    [cacheEntry setDuration:duration];
     [allCacheEntries addObject:cacheEntry];
 }
 

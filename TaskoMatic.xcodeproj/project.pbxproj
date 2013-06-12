@@ -42,16 +42,20 @@
 		705B6DA5174AD1EB00A8EBA7 /* DateTimePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B6DA4174AD1EB00A8EBA7 /* DateTimePickerController.m */; };
 		705B6DA9174BCE4E00A8EBA7 /* DurationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B6DA7174BCE4E00A8EBA7 /* DurationPickerController.m */; };
 		705B6DAA174BCE4E00A8EBA7 /* DurationPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 705B6DA8174BCE4E00A8EBA7 /* DurationPickerController.xib */; };
-		705B6DB3174D579600A8EBA7 /* ToMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B6DB2174D579600A8EBA7 /* ToMItem.m */; };
 		7075CC09175AC59B0020A32C /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = 7075CC08175AC59B0020A32C /* Hypno.png */; };
 		7075CC0B175AC5B90020A32C /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = 7075CC0A175AC5B90020A32C /* Time.png */; };
 		708AF6AC17582B9B00B7C47E /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 708AF6AB17582B9B00B7C47E /* Default-Landscape~ipad.png */; };
 		708AF6AE17582BAA00B7C47E /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 708AF6AD17582BAA00B7C47E /* Default-Portrait~ipad.png */; };
 		708AF6B31758E06700B7C47E /* HTAutocompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6B01758E06600B7C47E /* HTAutocompleteTextField.m */; };
-		708AF6B8175928F800B7C47E /* ToMCacheEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6B7175928F800B7C47E /* ToMCacheEntry.m */; };
 		708AF6C5175A2F9000B7C47E /* ToMCacheEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6C4175A2F8F00B7C47E /* ToMCacheEntriesViewController.m */; };
 		708AF6C8175A3F5200B7C47E /* ToMCacheEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */; };
 		708AF6CA175A3F9100B7C47E /* ToMCacheEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */; };
+		70A0C38E17665EB100965765 /* ToMCacheEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A0C38D17665EB000965765 /* ToMCacheEntry.m */; };
+		70A0C39117665EB100965765 /* ToMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A0C39017665EB100965765 /* ToMItem.m */; };
+		70A0C39417666BCF00965765 /* ToMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A0C39317666BCF00965765 /* ToMUtilities.m */; };
+		70A0C3981767D21400965765 /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0C3971767D21200965765 /* alarm.png */; };
+		70A0C39A1767D47200965765 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0C3991767D47200965765 /* Icon72.png */; };
+		70A0C39C1767D47800965765 /* Icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0C39B1767D47800965765 /* Icon144.png */; };
 		70FD9E7F1754FEFE00C6ED90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FD9E7E1754FEFE00C6ED90 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +87,7 @@
 		7018F3931760E01700D5F5D6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7018F3961760EC0100D5F5D6 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		7018F3981760EC0800D5F5D6 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		7018F39A176107F100D5F5D6 /* TaskoMatic 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TaskoMatic 4.xcdatamodel"; sourceTree = "<group>"; };
 		70533D55175CE85A003AC045 /* ToMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMAboutViewController.h; sourceTree = "<group>"; };
 		70533D56175CE85A003AC045 /* ToMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMAboutViewController.m; sourceTree = "<group>"; };
 		70533D57175CE85B003AC045 /* ToMAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMAboutViewController.xib; sourceTree = "<group>"; };
@@ -107,8 +112,6 @@
 		705B6DA6174BCE4D00A8EBA7 /* DurationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurationPickerController.h; sourceTree = "<group>"; };
 		705B6DA7174BCE4E00A8EBA7 /* DurationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationPickerController.m; sourceTree = "<group>"; };
 		705B6DA8174BCE4E00A8EBA7 /* DurationPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DurationPickerController.xib; sourceTree = "<group>"; };
-		705B6DB1174D579600A8EBA7 /* ToMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItem.h; sourceTree = "<group>"; };
-		705B6DB2174D579600A8EBA7 /* ToMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItem.m; sourceTree = "<group>"; };
 		7075CC08175AC59B0020A32C /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hypno.png; path = TaskoMatic/Hypno.png; sourceTree = "<group>"; };
 		7075CC0A175AC5B90020A32C /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Time.png; path = TaskoMatic/Time.png; sourceTree = "<group>"; };
 		708AF6AA1757AE6200B7C47E /* TaskoMatic 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TaskoMatic 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -117,13 +120,20 @@
 		708AF6AF1758E06600B7C47E /* HTAutocompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAutocompleteTextField.h; sourceTree = "<group>"; };
 		708AF6B01758E06600B7C47E /* HTAutocompleteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAutocompleteTextField.m; sourceTree = "<group>"; };
 		708AF6B51759271E00B7C47E /* TaskoMatic 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TaskoMatic 3.xcdatamodel"; sourceTree = "<group>"; };
-		708AF6B6175928F700B7C47E /* ToMCacheEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntry.h; sourceTree = "<group>"; };
-		708AF6B7175928F800B7C47E /* ToMCacheEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntry.m; sourceTree = "<group>"; };
 		708AF6C3175A2F8F00B7C47E /* ToMCacheEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntriesViewController.h; sourceTree = "<group>"; };
 		708AF6C4175A2F8F00B7C47E /* ToMCacheEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntriesViewController.m; sourceTree = "<group>"; };
 		708AF6C6175A3F5100B7C47E /* ToMCacheEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntryCell.h; sourceTree = "<group>"; };
 		708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntryCell.m; sourceTree = "<group>"; };
 		708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMCacheEntryCell.xib; sourceTree = "<group>"; };
+		70A0C38C17665EB000965765 /* ToMCacheEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntry.h; sourceTree = "<group>"; };
+		70A0C38D17665EB000965765 /* ToMCacheEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntry.m; sourceTree = "<group>"; };
+		70A0C38F17665EB100965765 /* ToMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItem.h; sourceTree = "<group>"; };
+		70A0C39017665EB100965765 /* ToMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItem.m; sourceTree = "<group>"; };
+		70A0C39217666BCF00965765 /* ToMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMUtilities.h; sourceTree = "<group>"; };
+		70A0C39317666BCF00965765 /* ToMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMUtilities.m; sourceTree = "<group>"; };
+		70A0C3971767D21200965765 /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
+		70A0C3991767D47200965765 /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
+		70A0C39B1767D47800965765 /* Icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon144.png; sourceTree = "<group>"; };
 		70FD9E7E1754FEFE00C6ED90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -146,47 +156,47 @@
 		70037F28174571A000014723 = {
 			isa = PBXGroup;
 			children = (
-				7018F3981760EC0800D5F5D6 /* Default-Portrait@2x~ipad.png */,
-				7018F3961760EC0100D5F5D6 /* Default-Landscape@2x~ipad.png */,
-				7018F3951760E14700D5F5D6 /* Images */,
 				70533DE4175F713E003AC045 /* 3rd Party */,
-				70533D78175F6AC5003AC045 /* ToMExplanationViewController.h */,
-				70533D79175F6AC5003AC045 /* ToMExplanationViewController.m */,
-				70533D7A175F6AC6003AC045 /* ToMExplanationViewController.xib */,
-				708AF6C3175A2F8F00B7C47E /* ToMCacheEntriesViewController.h */,
-				708AF6C4175A2F8F00B7C47E /* ToMCacheEntriesViewController.m */,
-				708AF6B6175928F700B7C47E /* ToMCacheEntry.h */,
-				708AF6B7175928F800B7C47E /* ToMCacheEntry.m */,
-				705B6DA4174AD1EB00A8EBA7 /* DateTimePickerController.m */,
 				705B6DA3174AD1BA00A8EBA7 /* DateTimePickerController.h */,
-				70533D55175CE85A003AC045 /* ToMAboutViewController.h */,
-				70533D56175CE85A003AC045 /* ToMAboutViewController.m */,
-				70533D57175CE85B003AC045 /* ToMAboutViewController.xib */,
+				705B6DA4174AD1EB00A8EBA7 /* DateTimePickerController.m */,
 				705B6DA0174ACF8000A8EBA7 /* DateTimePickerController.xib */,
-				70037F6C17466C6900014723 /* ToMDetailItemViewController.h */,
-				70037F6D17466C6900014723 /* ToMDetailItemViewController.m */,
-				70037F6E17466C6900014723 /* ToMDetailItemViewController.xib */,
 				705B6DA6174BCE4D00A8EBA7 /* DurationPickerController.h */,
 				705B6DA7174BCE4E00A8EBA7 /* DurationPickerController.m */,
 				705B6DA8174BCE4E00A8EBA7 /* DurationPickerController.xib */,
+				70037F33174571A200014723 /* Frameworks */,
+				7018F3951760E14700D5F5D6 /* Images */,
+				70037F32174571A200014723 /* Products */,
+				70037F3A174571A200014723 /* TaskoMatic */,
+				70037F5317457AD800014723 /* TaskoMatic.xcdatamodeld */,
+				70533D55175CE85A003AC045 /* ToMAboutViewController.h */,
+				70533D56175CE85A003AC045 /* ToMAboutViewController.m */,
+				70533D57175CE85B003AC045 /* ToMAboutViewController.xib */,
+				708AF6C3175A2F8F00B7C47E /* ToMCacheEntriesViewController.h */,
+				708AF6C4175A2F8F00B7C47E /* ToMCacheEntriesViewController.m */,
+				708AF6C6175A3F5100B7C47E /* ToMCacheEntryCell.h */,
+				708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */,
+				708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */,
+				70037F6C17466C6900014723 /* ToMDetailItemViewController.h */,
+				70037F6D17466C6900014723 /* ToMDetailItemViewController.m */,
+				70037F6E17466C6900014723 /* ToMDetailItemViewController.xib */,
+				70A0C38F17665EB100965765 /* ToMItem.h */,
+				70A0C39017665EB100965765 /* ToMItem.m */,
+				70A0C38C17665EB000965765 /* ToMCacheEntry.h */,
+				70A0C38D17665EB000965765 /* ToMCacheEntry.m */,
+				70533D78175F6AC5003AC045 /* ToMExplanationViewController.h */,
+				70533D79175F6AC5003AC045 /* ToMExplanationViewController.m */,
+				70533D7A175F6AC6003AC045 /* ToMExplanationViewController.xib */,
+				70037F6717459C9E00014723 /* ToMItemCell.h */,
+				70037F6817459C9E00014723 /* ToMItemCell.m */,
+				70037F65174598D200014723 /* ToMItemCell.xib */,
+				70037F62174588B700014723 /* ToMItemStore.h */,
+				70037F63174588B700014723 /* ToMItemStore.m */,
 				70037F5F1745863B00014723 /* ToMItemsViewController.h */,
 				70037F601745863B00014723 /* ToMItemsViewController.m */,
 				70533D5E175E916B003AC045 /* ToMNavigationController.h */,
 				70533D5F175E916B003AC045 /* ToMNavigationController.m */,
-				70037F65174598D200014723 /* ToMItemCell.xib */,
-				708AF6C6175A3F5100B7C47E /* ToMCacheEntryCell.h */,
-				708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */,
-				708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */,
-				70037F6717459C9E00014723 /* ToMItemCell.h */,
-				70037F6817459C9E00014723 /* ToMItemCell.m */,
-				70037F62174588B700014723 /* ToMItemStore.h */,
-				70037F63174588B700014723 /* ToMItemStore.m */,
-				70037F5317457AD800014723 /* TaskoMatic.xcdatamodeld */,
-				705B6DB1174D579600A8EBA7 /* ToMItem.h */,
-				705B6DB2174D579600A8EBA7 /* ToMItem.m */,
-				70037F3A174571A200014723 /* TaskoMatic */,
-				70037F33174571A200014723 /* Frameworks */,
-				70037F32174571A200014723 /* Products */,
+				70A0C39217666BCF00965765 /* ToMUtilities.h */,
+				70A0C39317666BCF00965765 /* ToMUtilities.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,8 +246,13 @@
 			isa = PBXGroup;
 			children = (
 				7018F3931760E01700D5F5D6 /* Default-568h@2x.png */,
+				7018F3981760EC0800D5F5D6 /* Default-Portrait@2x~ipad.png */,
+				7018F3961760EC0100D5F5D6 /* Default-Landscape@2x~ipad.png */,
 				700B46EC1755420F00A9CF65 /* Default@2x.png */,
 				700B46EA175541F000A9CF65 /* Default.png */,
+				70A0C3971767D21200965765 /* alarm.png */,
+				70A0C3991767D47200965765 /* Icon72.png */,
+				70A0C39B1767D47800965765 /* Icon144.png */,
 				70533D71175EB9C9003AC045 /* Icon@2x.png */,
 				70533D6F175EB9C0003AC045 /* Icon.png */,
 				708AF6AB17582B9B00B7C47E /* Default-Landscape~ipad.png */,
@@ -338,6 +353,9 @@
 				7018F3941760E01700D5F5D6 /* Default-568h@2x.png in Resources */,
 				7018F3971760EC0100D5F5D6 /* Default-Landscape@2x~ipad.png in Resources */,
 				7018F3991760EC0800D5F5D6 /* Default-Portrait@2x~ipad.png in Resources */,
+				70A0C3981767D21400965765 /* alarm.png in Resources */,
+				70A0C39A1767D47200965765 /* Icon72.png in Resources */,
+				70A0C39C1767D47800965765 /* Icon144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +375,7 @@
 				70037F6F17466C6900014723 /* ToMDetailItemViewController.m in Sources */,
 				705B6DA5174AD1EB00A8EBA7 /* DateTimePickerController.m in Sources */,
 				705B6DA9174BCE4E00A8EBA7 /* DurationPickerController.m in Sources */,
-				705B6DB3174D579600A8EBA7 /* ToMItem.m in Sources */,
 				708AF6B31758E06700B7C47E /* HTAutocompleteTextField.m in Sources */,
-				708AF6B8175928F800B7C47E /* ToMCacheEntry.m in Sources */,
 				708AF6C5175A2F9000B7C47E /* ToMCacheEntriesViewController.m in Sources */,
 				708AF6C8175A3F5200B7C47E /* ToMCacheEntryCell.m in Sources */,
 				70533D58175CE85B003AC045 /* ToMAboutViewController.m in Sources */,
@@ -367,6 +383,9 @@
 				70533D7B175F6AC6003AC045 /* ToMExplanationViewController.m in Sources */,
 				70533DE2175F70F5003AC045 /* MJPopupBackgroundView.m in Sources */,
 				70533DE3175F70F5003AC045 /* UIViewController+MJPopupViewController.m in Sources */,
+				70A0C38E17665EB100965765 /* ToMCacheEntry.m in Sources */,
+				70A0C39117665EB100965765 /* ToMItem.m in Sources */,
+				70A0C39417666BCF00965765 /* ToMUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,9 +514,10 @@
 			children = (
 				708AF6AA1757AE6200B7C47E /* TaskoMatic 2.xcdatamodel */,
 				708AF6B51759271E00B7C47E /* TaskoMatic 3.xcdatamodel */,
+				7018F39A176107F100D5F5D6 /* TaskoMatic 4.xcdatamodel */,
 				70037F5417457AD800014723 /* TaskoMatic.xcdatamodel */,
 			);
-			currentVersion = 708AF6B51759271E00B7C47E /* TaskoMatic 3.xcdatamodel */;
+			currentVersion = 7018F39A176107F100D5F5D6 /* TaskoMatic 4.xcdatamodel */;
 			path = TaskoMatic.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

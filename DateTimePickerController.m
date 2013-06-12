@@ -106,6 +106,7 @@
         [self setDoneButton:nil];
         [self setDateTimePicker:nil];
         [self removeFromParentViewController];
+        [self setInitDate:nil];
     }
     [super viewWillDisappear:animated];
 }

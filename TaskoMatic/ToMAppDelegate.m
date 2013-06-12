@@ -21,9 +21,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    UILocalNotification *notice = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    
     UITabBarController *tbvc = [[UITabBarController alloc] init];
-    ToMItemsViewController *ivc = [[ToMItemsViewController alloc] init];
-    UINavigationController *nvc1 = [[UINavigationController alloc] initWithRootViewController:ivc];
+    _itemsViewController = [[ToMItemsViewController alloc] init];
+    UINavigationController *nvc1 = [[UINavigationController alloc] initWithRootViewController:_itemsViewController];
     ToMCacheEntriesViewController *cevc = [[ToMCacheEntriesViewController alloc] init];
     UINavigationController *nvc2 = [[UINavigationController alloc] initWithRootViewController:cevc];
     ToMAboutViewController *avc = [[ToMAboutViewController alloc] init];
@@ -39,9 +41,35 @@
     [[[[tbvc viewControllers] objectAtIndex:2] tabBarItem] setImage:i];
     [self.window setRootViewController:tbvc];
     
+    if (notice)
+    {
+        [_itemsViewController setAlertItemObjectID:[[notice userInfo] objectForKey:@"objectID"]];
+    }
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    if (notification == nil)
+    {
+        return;
+    }
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reminder" message:[notification alertBody] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        UITabBarController *tbvc = (UITabBarController *) [[self window] rootViewController];
+        [tbvc setSelectedIndex:0];
+        [_itemsViewController setAlertItemObjectID:[[notification userInfo] objectForKey:@"objectID"]];
+        [[_itemsViewController tableView] reloadData];
+    }
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

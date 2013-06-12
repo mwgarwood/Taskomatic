@@ -26,6 +26,11 @@
     if (self)
     {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storeUpdated:) name:ToMStoreUpdateNotification object:nil];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        for (ToMItem *item in [[ToMItemStore sharedStore] allItems])
+        {
+            [item setNotifScheduled:0];
+        }
         UINavigationItem *n = [self navigationItem];
         [n setTitle:NSLocalizedString(@"Task-O-Matic", @"Application Name")];
         UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
@@ -57,7 +62,7 @@
     ToMItem *p = [[[ToMItemStore sharedStore] allItems] objectAtIndex:[indexPath row]];
     [[cell nameLabel] setText:[p name]];
     NSMutableString *timeLabel = [[NSMutableString alloc] init];
-    
+    notifications = [[NSMutableDictionary alloc] init];
     [cell setHighlighted: [p startTime] > 0 ? YES : NO];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -69,7 +74,6 @@
     date = [NSDate dateWithTimeIntervalSinceReferenceDate:[p schedTime] + [p duration]*60];
     [timeLabel appendString:[dateFormatter stringFromDate:date]];
     [[cell timeLabel] setText:timeLabel];
-    
     return cell;
 }
 
@@ -85,23 +89,51 @@
     {
         [cell setBackgroundColor:[UIColor colorWithRed:232.0f/255.0f green:221.0f/255.0f blue:203.0f/255.0f alpha:1]];
     }
-
+    ToMItemCell *tomCell = (ToMItemCell *)cell;
+    if ([[[[p objectID] URIRepresentation] absoluteString] isEqual:_alertItemObjectID])
+    {
+        [self setAlertItemObjectID:nil];
+        [[tomCell nameLabel] setBackgroundColor:[UIColor blackColor]];
+        [[tomCell nameLabel] setTextColor:[UIColor whiteColor]];
+    }
+    else
+    {
+        [[tomCell nameLabel] setBackgroundColor:[UIColor clearColor]];
+        [[tomCell nameLabel] setTextColor:[UIColor blackColor]];
+    }
+    if ([[[tomCell nameLabel] subviews] count] > 0)
+    {
+        [[[[tomCell nameLabel] subviews] objectAtIndex:0] removeFromSuperview];
+    }
+    if ([p completed])
+    {
+        CGSize expectedNameSize = [[[tomCell nameLabel] text] sizeWithFont:tomCell.nameLabel.font constrainedToSize:tomCell.nameLabel.frame.size lineBreakMode:UILineBreakModeClip];
+        UIView *strikethrough = [[UIView alloc] init];
+        strikethrough.frame = CGRectMake(0, tomCell.nameLabel.frame.size.height/2, expectedNameSize.width, 1);
+        strikethrough.backgroundColor = tomCell.nameLabel.textColor;
+        [[tomCell nameLabel] addSubview:strikethrough];
+    }
+    if ([p enableNotif])
+    {
+        UIImage *image = [UIImage imageNamed:@"alarm.png"];
+        [[tomCell alarmImage] setImage:image];
+    }
+    else
+    {
+        [[tomCell alarmImage] setImage:nil];
+    }
     if (currTime >= [p schedTime] && currTime <= [p schedTime] + [p duration]*60)
     {
         CGRect bounds = [[self tableView] rectForRowAtIndexPath:indexPath];
         
-        if (progressLine)
-        {
-            [progressLine removeFromSuperlayer];
-        }
-        else
+        if (!progressLine)
         {
             progressLine = [[CALayer alloc] init];
-            [progressLine setBounds:CGRectMake(0, 0, SCREEN_WIDTH, 6)];
             [progressLine setDelegate:self];
         }
         float y = (currTime - [p schedTime]) / ([p duration]*60.) * bounds.size.height + bounds.origin.y;
         [progressLine setPosition:CGPointMake(SCREEN_WIDTH/2, y)];
+        [progressLine setBounds:CGRectMake(0, 0, SCREEN_WIDTH, 6)];
         [[[self view] layer] addSublayer:progressLine];
         [progressLine setNeedsDisplay];
     }
@@ -253,6 +285,7 @@
         [progressLine removeFromSuperlayer];
     }
     NSTimeInterval nextTime = [[[NSDate alloc] init] timeIntervalSinceReferenceDate];
+    NSTimeInterval currTime = nextTime;
     NSArray *allItems = [[ToMItemStore sharedStore] allItems];
     
     for (int i = 0; i < [allItems count]; i++)
@@ -314,6 +347,50 @@
         nextTime += [item duration] * 60;
     }
     [[ToMItemStore sharedStore] saveChanges];
+    for (int i = 0; i < [allItems count]; i++)
+    {
+        ToMItem *item = [allItems objectAtIndex:i];
+        if ([item enableNotif])
+        {
+            if ([item notifScheduled] != [item schedTime]  && [item schedTime] > currTime)
+            {
+                [self scheduleNotification:item];
+            }
+        }
+        else
+        {
+            UILocalNotification *oldNotice = [notifications objectForKey:[item objectID]];
+            if (oldNotice != nil)
+            {
+                [[UIApplication sharedApplication] cancelLocalNotification:oldNotice];
+                [notifications removeObjectForKey:[item objectID]];
+            }
+        }
+    }
+}
+
+- (void)scheduleNotification:(ToMItem *)item
+{
+    UILocalNotification *notice = [[UILocalNotification alloc] init];
+    if (notice == nil)
+    {
+        return;
+    }
+    UILocalNotification *oldNotice = [notifications objectForKey:[item objectID]];
+    if (oldNotice != nil)
+    {
+        [[UIApplication sharedApplication] cancelLocalNotification:oldNotice];
+    }
+    [notifications setObject:notice forKey:[item objectID]];
+    notice.fireDate = [NSDate dateWithTimeIntervalSinceReferenceDate:[item schedTime]];
+    notice.timeZone = [NSTimeZone defaultTimeZone];
+    NSString *alert = [item name] == nil ? @"Task Reminder" : [NSString stringWithFormat:@"%@", [item name]];
+    notice.alertBody = alert;
+    notice.alertAction = @"View Task List";
+    notice.soundName = UILocalNotificationDefaultSoundName;
+    notice.userInfo = [[NSDictionary alloc] initWithObjectsAndKeys:[[[item objectID] URIRepresentation] absoluteString], @"objectID", nil];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notice];
+    
 }
 
 - (void)reinsertItem:(ToMItem *)item

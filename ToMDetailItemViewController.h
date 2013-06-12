@@ -20,6 +20,10 @@
     __weak IBOutlet UIButton *endButton;
     __weak IBOutlet UIButton *durationButton;
     __weak IBOutlet UISwitch *schedSoonSwitch;
+    __weak IBOutlet UISwitch *schedNotifSwitch;
+    __weak IBOutlet UISwitch *completedSwitch;
+    __weak IBOutlet UIScrollView *scrollView;
+    __weak IBOutlet UIControl *controlView;
     UIPopoverController *popOver;
     id picker;
     NSArray *allCacheEntries;

@@ -2,7 +2,7 @@
 //  ToMCacheEntry.h
 //  TaskoMatic
 //
-//  Created by Mike Garwood on 5/31/13.
+//  Created by Mike Garwood on 6/10/13.
 //  Copyright (c) 2013 Neterata. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @interface ToMCacheEntry : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic) int32_t duration;
+@property (nonatomic, retain) NSString * name;
 
 @end

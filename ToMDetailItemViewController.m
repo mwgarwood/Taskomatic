@@ -12,6 +12,7 @@
 #import "ToMItemStore.h"
 #import "DateTimePickerController.h"
 #import "DurationPickerController.h"
+#import "ToMUtilities.h"
 
 @interface ToMDetailItemViewController ()
 
@@ -22,6 +23,7 @@
 - (id)initForNewItem:(BOOL)isNew
 {
     self = [super initWithNibName:nil bundle:nil];
+    
     if (self)
     {
         if (isNew)
@@ -102,6 +104,33 @@
 
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [controlView setFrame:CGRectMake(0, 0, self.view.frame.size.width, 568)];  // yuk
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [scrollView setFrame:self.view.frame];
+    [scrollView setScrollEnabled:YES];
+    [controlView removeFromSuperview];
+    [scrollView addSubview:controlView];
+    self.view = scrollView;
+
+   
+    //[[self view] addSubview:scrollView];
+}
+
+- (void)viewDidUnload
+{
+    schedNotifSwitch = nil;
+    completedSwitch = nil;
+    scrollView = nil;
+    controlView = nil;
+    [super viewDidUnload];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -113,41 +142,14 @@
     [self updateDateDisplay];
     [schedSoonSwitch setOn: ![_item schedLate] && [_item startTime] == 0];
     [schedSoonSwitch setEnabled: [_item startTime] == 0];
+    [schedNotifSwitch setOn:[_item enableNotif]];
+    [completedSwitch setOn:[_item completed]];
+    [scrollView flashScrollIndicators];
 }
 
 - (void)updateDurationDisplay
 {
-    int hours = [_item duration] / 60;
-    int mins = [_item duration] - hours * 60;
-    NSMutableString *value = [[NSMutableString alloc] init];
-    if (hours)
-    {
-        [value setString:[NSString stringWithFormat:@"%d hour", hours]];
-        if (hours != 1)
-        {
-            [value appendString:@"s"];
-        }
-        if (mins)
-        {
-            [value appendFormat:@", %d minute", mins];
-            if (mins != 1)
-            {
-                [value appendString:@"s"];
-            }
-        }
-    }
-    else
-    {
-        if (mins)
-        {
-            [value setString:[NSString stringWithFormat:@"%d minute", mins]];
-            if (mins != 1)
-            {
-                [value appendString:@"s"];
-            }
-        }
-    }
-    [durationButton setTitle:value forState:UIControlStateNormal];
+    [durationButton setTitle:[ToMUtilities normalizeTime:[_item duration]] forState:UIControlStateNormal];
 }
 
 - (void)updateDateDisplay
@@ -178,6 +180,8 @@
     [[self view] endEditing:YES];
     [_item setName:[[nameField text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
     [_item setSchedLate:![schedSoonSwitch isOn]];
+    [_item setEnableNotif:[schedNotifSwitch isOn]];
+    [_item setCompleted:[completedSwitch isOn]];
     if (!wasCancelled)
     {
         [[ToMItemStore sharedStore] insertCacheEntry:_item];
@@ -334,5 +338,25 @@
     picker = nil;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)io
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
+        return YES;
+    }
+    else
+    {
+        return (io == UIInterfaceOrientationPortrait || io == UIInterfaceOrientationLandscapeLeft || io == UIInterfaceOrientationLandscapeRight);
+    }
+}
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [scrollView setFrame:self.view.frame];
+}
 @end

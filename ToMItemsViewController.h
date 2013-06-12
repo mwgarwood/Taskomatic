@@ -14,13 +14,16 @@
 @interface ToMItemsViewController : UITableViewController 
 {
     CALayer *progressLine;
+    NSMutableDictionary *notifications;
 }
 
 @property (nonatomic, strong) ToMItem *editItem;
+@property (nonatomic, strong) NSString *alertItemObjectID;
 
 - (void)addNewItem:(id)sender;
 - (void)rescheduleItems;
 - (void)reinsertItem:(ToMItem *)item;
 - (void)adjustItemAtIndex:(int)index;
+- (void)scheduleNotification:(ToMItem *)item;
 
 @end

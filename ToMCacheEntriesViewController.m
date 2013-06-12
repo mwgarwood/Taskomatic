@@ -10,6 +10,7 @@
 #import "ToMItemStore.h"
 #import "ToMCacheEntry.h"
 #import "ToMCacheEntryCell.h"
+#import "ToMUtilities.h"
 
 @interface ToMCacheEntriesViewController ()
 
@@ -28,6 +29,33 @@
        // UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
         //[n setRightBarButtonItem:bbi];
         [n setLeftBarButtonItem:[self editButtonItem]];
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TaskoMaticSetCacheDefaultsPrefKey"])
+        {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TaskoMaticSetCacheDefaultsPrefKey"];
+            NSArray *cacheDefaults = [NSArray arrayWithObjects:
+                                      @"Breakfast:60",
+                                      @"Lunch:60",
+                                      @"Dinner:90",
+                                      @"Airport security:45",
+                                      @"Drive to airport:45",
+                                      @"Drive home:30",
+                                      @"Wake up:0",
+                                      @"Groceries:60",
+                                      @"Pack:30",
+                                      @"Travel:60",
+                                      @"Pick up:30",
+                                      @"Catch flight:0",
+                                      @"Exercise/Workout:90",
+                                      @"Email:30",
+                                      @"Meeting:60",
+                                      nil];
+            for (NSString *task in cacheDefaults)
+            {
+                NSArray *components = [task componentsSeparatedByString:@":"];
+                [[ToMItemStore sharedStore] insertCacheEntryWithName:[components objectAtIndex:0] minutes:[[components objectAtIndex:1] intValue]];
+                
+            }
+        }
     }
     return self;
 }
@@ -76,7 +104,7 @@
     ToMCacheEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToMCacheEntryCell"];
     ToMCacheEntry *p = [[[ToMItemStore sharedStore] allCacheEntries] objectAtIndex:[indexPath row]];
     [[cell nameLabel] setText:[p name]];
-    NSString *duration = [NSString stringWithFormat:@"%d minute%@", [p duration], [p duration] != 1 ? @"s" : @""];
+    NSString *duration = [ToMUtilities normalizeTime:[p duration]];
     [[cell durationLabel] setText:duration];
     return cell;
 }
