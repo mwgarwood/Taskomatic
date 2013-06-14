@@ -41,6 +41,7 @@
     [super viewWillAppear:animated];
     [_durationPicker setDatePickerMode:UIDatePickerModeCountDownTimer];
     [_durationPicker setCountDownDuration:_initDuration * 60.];
+    [_durationPicker setMinuteInterval:[[NSUserDefaults standardUserDefaults] integerForKey:@"timeInterval"]];
     if (!actionSheet)
     {           // make done button disappear
         for (NSObject *object in [[self view] subviews])

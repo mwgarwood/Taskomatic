@@ -32,28 +32,27 @@
         if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TaskoMaticSetCacheDefaultsPrefKey"])
         {
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TaskoMaticSetCacheDefaultsPrefKey"];
-            NSArray *cacheDefaults = [NSArray arrayWithObjects:
-                                      @"Breakfast:60",
-                                      @"Lunch:60",
-                                      @"Dinner:90",
-                                      @"Airport security:45",
-                                      @"Drive to airport:45",
-                                      @"Drive home:30",
-                                      @"Wake up:0",
-                                      @"Groceries:60",
-                                      @"Pack:30",
-                                      @"Travel:60",
-                                      @"Pick up:30",
-                                      @"Catch flight:0",
-                                      @"Exercise/Workout:90",
-                                      @"Email:30",
-                                      @"Meeting:60",
-                                      nil];
-            for (NSString *task in cacheDefaults)
+            NSDictionary *cacheDefaults = @{
+                                      @"Breakfast" : @60,
+                                      @"Lunch" : @60,
+                                      @"Dinner" : @90,
+                                      @"Airport security" : @45,
+                                      @"Drive to airport" : @45,
+                                      @"Drive home" : @30,
+                                      @"Wake up" : @0,
+                                      @"Groceries" : @60,
+                                      @"Pack" : @30,
+                                      @"Travel" : @60,
+                                      @"Pick up" : @30,
+                                      @"Catch flight" : @0,
+                                      @"Exercise/Workout" : @90,
+                                      @"Email" : @30,
+                                      @"Meeting" : @60,
+                                      };
+            for (NSString *taskname in cacheDefaults)
             {
-                NSArray *components = [task componentsSeparatedByString:@":"];
-                [[ToMItemStore sharedStore] insertCacheEntryWithName:[components objectAtIndex:0] minutes:[[components objectAtIndex:1] intValue]];
-                
+                int duration = [[cacheDefaults objectForKey:taskname] integerValue];
+                [[ToMItemStore sharedStore] insertCacheEntryWithName:taskname minutes:duration];
             }
         }
     }

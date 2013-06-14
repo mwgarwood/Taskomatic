@@ -58,6 +58,7 @@
         [_dateTimePicker setDate:_initDate];
         [self setInitDate:nil];
     }
+    [_dateTimePicker setMinuteInterval:[[NSUserDefaults standardUserDefaults] integerForKey:@"timeInterval"]];
     if (!_actionSheet)
     {           // make done button disappear
         for (NSObject *object in [[self view] subviews])

@@ -21,6 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    [[NSUserDefaults standardUserDefaults] setValue:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forKey:@"versionString"];
+    
     UILocalNotification *notice = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     
     UITabBarController *tbvc = [[UITabBarController alloc] init];
