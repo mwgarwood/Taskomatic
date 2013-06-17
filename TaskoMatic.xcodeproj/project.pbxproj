@@ -51,12 +51,12 @@
 		708AF6C8175A3F5200B7C47E /* ToMCacheEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 708AF6C7175A3F5100B7C47E /* ToMCacheEntryCell.m */; };
 		708AF6CA175A3F9100B7C47E /* ToMCacheEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */; };
 		70A0C38E17665EB100965765 /* ToMCacheEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A0C38D17665EB000965765 /* ToMCacheEntry.m */; };
-		70A0C39117665EB100965765 /* ToMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A0C39017665EB100965765 /* ToMItem.m */; };
 		70A0C39417666BCF00965765 /* ToMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A0C39317666BCF00965765 /* ToMUtilities.m */; };
 		70A0C3981767D21400965765 /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0C3971767D21200965765 /* alarm.png */; };
 		70A0C39A1767D47200965765 /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0C3991767D47200965765 /* Icon72.png */; };
 		70A0C39C1767D47800965765 /* Icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 70A0C39B1767D47800965765 /* Icon144.png */; };
 		70A0C39E176B451000965765 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70A0C39D176B451000965765 /* Settings.bundle */; };
+		70A0C3A5176F4EEA00965765 /* ToMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A0C3A4176F4EE900965765 /* ToMItem.m */; };
 		70FD9E7F1754FEFE00C6ED90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FD9E7E1754FEFE00C6ED90 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,14 +128,15 @@
 		708AF6C9175A3F9100B7C47E /* ToMCacheEntryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToMCacheEntryCell.xib; sourceTree = "<group>"; };
 		70A0C38C17665EB000965765 /* ToMCacheEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMCacheEntry.h; sourceTree = "<group>"; };
 		70A0C38D17665EB000965765 /* ToMCacheEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMCacheEntry.m; sourceTree = "<group>"; };
-		70A0C38F17665EB100965765 /* ToMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItem.h; sourceTree = "<group>"; };
-		70A0C39017665EB100965765 /* ToMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItem.m; sourceTree = "<group>"; };
 		70A0C39217666BCF00965765 /* ToMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMUtilities.h; sourceTree = "<group>"; };
 		70A0C39317666BCF00965765 /* ToMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMUtilities.m; sourceTree = "<group>"; };
 		70A0C3971767D21200965765 /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
 		70A0C3991767D47200965765 /* Icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon72.png; sourceTree = "<group>"; };
 		70A0C39B1767D47800965765 /* Icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon144.png; sourceTree = "<group>"; };
 		70A0C39D176B451000965765 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		70A0C39F176F4C8000965765 /* TaskoMatic 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TaskoMatic 5.xcdatamodel"; sourceTree = "<group>"; };
+		70A0C3A3176F4EE900965765 /* ToMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMItem.h; sourceTree = "<group>"; };
+		70A0C3A4176F4EE900965765 /* ToMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMItem.m; sourceTree = "<group>"; };
 		70FD9E7E1754FEFE00C6ED90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -158,6 +159,8 @@
 		70037F28174571A000014723 = {
 			isa = PBXGroup;
 			children = (
+				70A0C3A3176F4EE900965765 /* ToMItem.h */,
+				70A0C3A4176F4EE900965765 /* ToMItem.m */,
 				70A0C39D176B451000965765 /* Settings.bundle */,
 				70533DE4175F713E003AC045 /* 3rd Party */,
 				705B6DA3174AD1BA00A8EBA7 /* DateTimePickerController.h */,
@@ -182,8 +185,6 @@
 				70037F6C17466C6900014723 /* ToMDetailItemViewController.h */,
 				70037F6D17466C6900014723 /* ToMDetailItemViewController.m */,
 				70037F6E17466C6900014723 /* ToMDetailItemViewController.xib */,
-				70A0C38F17665EB100965765 /* ToMItem.h */,
-				70A0C39017665EB100965765 /* ToMItem.m */,
 				70A0C38C17665EB000965765 /* ToMCacheEntry.h */,
 				70A0C38D17665EB000965765 /* ToMCacheEntry.m */,
 				70533D78175F6AC5003AC045 /* ToMExplanationViewController.h */,
@@ -388,8 +389,8 @@
 				70533DE2175F70F5003AC045 /* MJPopupBackgroundView.m in Sources */,
 				70533DE3175F70F5003AC045 /* UIViewController+MJPopupViewController.m in Sources */,
 				70A0C38E17665EB100965765 /* ToMCacheEntry.m in Sources */,
-				70A0C39117665EB100965765 /* ToMItem.m in Sources */,
 				70A0C39417666BCF00965765 /* ToMUtilities.m in Sources */,
+				70A0C3A5176F4EEA00965765 /* ToMItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +517,7 @@
 		70037F5317457AD800014723 /* TaskoMatic.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				70A0C39F176F4C8000965765 /* TaskoMatic 5.xcdatamodel */,
 				708AF6AA1757AE6200B7C47E /* TaskoMatic 2.xcdatamodel */,
 				708AF6B51759271E00B7C47E /* TaskoMatic 3.xcdatamodel */,
 				7018F39A176107F100D5F5D6 /* TaskoMatic 4.xcdatamodel */,

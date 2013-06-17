@@ -37,6 +37,7 @@
         [n setRightBarButtonItem:bbi];
         [[self editButtonItem] setPossibleTitles:[NSSet setWithArray:[NSArray arrayWithObjects:@"Edit", @"Reschedule", nil]]];
         [n setLeftBarButtonItem:[self editButtonItem]];
+        notifications = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -62,7 +63,6 @@
     ToMItem *p = [[[ToMItemStore sharedStore] allItems] objectAtIndex:[indexPath row]];
     [[cell nameLabel] setText:[p name]];
     NSMutableString *timeLabel = [[NSMutableString alloc] init];
-    notifications = [[NSMutableDictionary alloc] init];
     [cell setHighlighted: [p startTime] > 0 ? YES : NO];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -203,6 +203,10 @@
         ToMItemStore *ps = [ToMItemStore sharedStore];
         NSArray *items = [ps allItems];
         ToMItem *p = [items objectAtIndex:[indexPath row]];
+        if ([p enableNotif])
+        {
+            [self cancelNotification:p];
+        }
         [ps removeItem:p cache:YES];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -359,12 +363,7 @@
         }
         else
         {
-            UILocalNotification *oldNotice = [notifications objectForKey:[item objectID]];
-            if (oldNotice != nil)
-            {
-                [[UIApplication sharedApplication] cancelLocalNotification:oldNotice];
-                [notifications removeObjectForKey:[item objectID]];
-            }
+            [self cancelNotification:item];
         }
     }
 }
@@ -376,21 +375,39 @@
     {
         return;
     }
+    NSManagedObjectID *oid = [item objectID];
+    //[self cancelNotification:item];
+    UILocalNotification *oldNotice = [notifications objectForKey:oid];
+    if (oldNotice != nil)
+    {
+        [[UIApplication sharedApplication] cancelLocalNotification:oldNotice];
+        
+    }
+    [notifications setObject:notice forKey:oid];
+    [item setNotifScheduled:[item schedTime]];
+    notice.fireDate = [NSDate dateWithTimeIntervalSinceReferenceDate:[item schedTime]];
+    notice.timeZone = [NSTimeZone defaultTimeZone];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *alert = [item name] == nil ? @"Task Reminder" : [NSString stringWithFormat:@"%@ - %@", [item name], [dateFormatter stringFromDate:notice.fireDate]];
+    notice.alertBody = alert;
+    notice.alertAction = @"View Task List";
+    notice.soundName = UILocalNotificationDefaultSoundName;
+    notice.userInfo = [[NSDictionary alloc] initWithObjectsAndKeys:[[oid URIRepresentation] absoluteString], @"objectID", nil];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notice];
+    
+}
+
+- (void)cancelNotification:(ToMItem *)item
+{
     UILocalNotification *oldNotice = [notifications objectForKey:[item objectID]];
     if (oldNotice != nil)
     {
         [[UIApplication sharedApplication] cancelLocalNotification:oldNotice];
     }
-    [notifications setObject:notice forKey:[item objectID]];
-    notice.fireDate = [NSDate dateWithTimeIntervalSinceReferenceDate:[item schedTime]];
-    notice.timeZone = [NSTimeZone defaultTimeZone];
-    NSString *alert = [item name] == nil ? @"Task Reminder" : [NSString stringWithFormat:@"%@", [item name]];
-    notice.alertBody = alert;
-    notice.alertAction = @"View Task List";
-    notice.soundName = UILocalNotificationDefaultSoundName;
-    notice.userInfo = [[NSDictionary alloc] initWithObjectsAndKeys:[[[item objectID] URIRepresentation] absoluteString], @"objectID", nil];
-    [[UIApplication sharedApplication] scheduleLocalNotification:notice];
-    
+    [notifications removeObjectForKey:[item objectID]];
+    [item setNotifScheduled:0];
 }
 
 - (void)reinsertItem:(ToMItem *)item

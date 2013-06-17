@@ -25,5 +25,6 @@
 - (void)reinsertItem:(ToMItem *)item;
 - (void)adjustItemAtIndex:(int)index;
 - (void)scheduleNotification:(ToMItem *)item;
+- (void)cancelNotification:(ToMItem *)item;
 
 @end

@@ -48,6 +48,8 @@
                                       @"Exercise/Workout" : @90,
                                       @"Email" : @30,
                                       @"Meeting" : @60,
+                                      @"Coffee" : @15,
+                                      @"Haircut" : @45
                                       };
             for (NSString *taskname in cacheDefaults)
             {
