@@ -74,7 +74,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<object class="NSDate" key="IBUIDate">
 							<double key="NS.time">390844003.82679802</double>
 						</object>
-						<int key="IBUIMinuteInterval">5</int>
+						<int key="IBUIMinuteInterval">1</int>
 					</object>
 					<object class="IBUIToolbar" id="430715377">
 						<reference key="NSNextResponder" ref="191373211"/>

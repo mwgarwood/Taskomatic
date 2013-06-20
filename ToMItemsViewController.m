@@ -38,6 +38,9 @@
         [[self editButtonItem] setPossibleTitles:[NSSet setWithArray:[NSArray arrayWithObjects:@"Edit", @"Reschedule", nil]]];
         [n setLeftBarButtonItem:[self editButtonItem]];
         notifications = [[NSMutableDictionary alloc] init];
+        sectionIndexFormatter = [[NSDateFormatter alloc] init];
+        [sectionIndexFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [sectionIndexFormatter setDateStyle:NSDateFormatterFullStyle];
     }
     return self;
 }
@@ -47,9 +50,43 @@
     return [self init];
 }
 
+/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[ToMItemStore sharedStore] allItems] count];
+}
+*/
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [sectionTitles count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[sectionRows objectAtIndex:section+1] integerValue] - [[sectionRows objectAtIndex:section] integerValue];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [sectionTitles objectAtIndex:section];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(20, 8, 320, 20);
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.shadowColor = [UIColor grayColor];
+    label.shadowOffset = CGSizeMake(-1.0, 1.0);
+    label.font = [UIFont boldSystemFontOfSize:16];
+    label.text = [sectionTitles objectAtIndex:section];
+    
+    UIView *view = [[UIView alloc] init];
+    [view addSubview:label];
+    
+    return view;
 }
 
 - (void)storeUpdated:(NSNotification *)note
@@ -60,12 +97,13 @@
 - tableView:tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ToMItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToMItemCell"];
-    ToMItem *p = [[[ToMItemStore sharedStore] allItems] objectAtIndex:[indexPath row]];
+    int itemIndex = [[sectionRows objectAtIndex:[indexPath section]] integerValue] + [indexPath row];
+    ToMItem *p = [[[ToMItemStore sharedStore] allItems] objectAtIndex:itemIndex];
     [[cell nameLabel] setText:[p name]];
     NSMutableString *timeLabel = [[NSMutableString alloc] init];
     [cell setHighlighted: [p startTime] > 0 ? YES : NO];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:[p schedTime]];
     [timeLabel setString:[dateFormatter stringFromDate:date]];
@@ -80,7 +118,8 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSTimeInterval currTime = [[[NSDate alloc] init] timeIntervalSinceReferenceDate];
-    ToMItem *p = [[[ToMItemStore sharedStore] allItems] objectAtIndex:[indexPath row]];
+     int itemIndex = [[sectionRows objectAtIndex:[indexPath section]] integerValue] + [indexPath row];
+    ToMItem *p = [[[ToMItemStore sharedStore] allItems] objectAtIndex:itemIndex];
     if ([p startTime] > 0)
     {
         [cell setBackgroundColor:[UIColor colorWithRed:205.0f/255.0f green:179.0f/255.0f blue:128.0f/255.0f alpha:1]];
@@ -202,10 +241,17 @@
     {
         ToMItemStore *ps = [ToMItemStore sharedStore];
         NSArray *items = [ps allItems];
-        ToMItem *p = [items objectAtIndex:[indexPath row]];
+        int section = [indexPath section];
+        int itemIndex = [[sectionRows objectAtIndex:section] integerValue] + [indexPath row];
+        ToMItem *p = [items objectAtIndex:itemIndex];
         if ([p enableNotif])
         {
             [self cancelNotification:p];
+        }
+        for (section++; section < [sectionRows count]; section++)
+        {
+            int rows = [[sectionRows objectAtIndex:section] integerValue] - 1;
+            [sectionRows setObject:[NSNumber numberWithInteger:rows] atIndexedSubscript:section];
         }
         [ps removeItem:p cache:YES];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -214,15 +260,38 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    [[ToMItemStore sharedStore] moveItemAtIndex:[sourceIndexPath row] toIndex:[destinationIndexPath row]];
-    [self adjustItemAtIndex:[destinationIndexPath row]];
+    int srcSection = [sourceIndexPath section];
+    int destSection = [destinationIndexPath section];
+    int indexFrom = [[sectionRows objectAtIndex:srcSection] integerValue] + [sourceIndexPath row];
+    int incr = 0;
+    int current = srcSection;
+    int end = destSection;
+    if (srcSection < destSection)
+    {
+        incr = -1;
+    }
+    else if (srcSection > destSection)
+    {
+        incr = 1;
+        current = destSection;
+        end = srcSection;
+    }
+    for (current++; current <= end; current++)
+    {
+        int rows = [[sectionRows objectAtIndex:current] integerValue] + incr;
+        [sectionRows setObject:[NSNumber numberWithInteger:rows] atIndexedSubscript:current];
+    }
+    int indexTo = [[sectionRows objectAtIndex:destSection] integerValue] + [destinationIndexPath row];
+    [[ToMItemStore sharedStore] moveItemAtIndex:indexFrom toIndex:indexTo];
+    [self adjustItemAtIndex:indexTo];
 }
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ToMDetailItemViewController *dvc = [[ToMDetailItemViewController alloc] initForNewItem:NO];
     NSArray *items = [[ToMItemStore sharedStore] allItems];
-    ToMItem *selectedItem = [items objectAtIndex:[indexPath row]];
+    int itemIndex = [[sectionRows objectAtIndex:[indexPath section]] integerValue] + [indexPath row];
+    ToMItem *selectedItem = [items objectAtIndex:itemIndex];
     [dvc setItem:selectedItem];
     [self setEditItem:selectedItem];
     [dvc setHidesBottomBarWhenPushed:YES];
@@ -232,7 +301,8 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *items = [[ToMItemStore sharedStore] allItems];
-    ToMItem *thisItem = [items objectAtIndex:[indexPath row]];
+    int itemIndex = [[sectionRows objectAtIndex:[indexPath section]] integerValue] + [indexPath row];
+    ToMItem *thisItem = [items objectAtIndex:itemIndex];
     return [thisItem startTime] > 0 ? NO : YES;
 }
 
@@ -283,7 +353,8 @@
 
 - (void)rescheduleItems
 {
-    
+    sectionRows = [[NSMutableArray alloc] init];
+    sectionTitles = [[NSMutableArray alloc] init];
     if (progressLine)
     {
         [progressLine removeFromSuperlayer];
@@ -351,6 +422,8 @@
         nextTime += [item duration] * 60;
     }
     [[ToMItemStore sharedStore] saveChanges];
+    
+    int nrows = 0;
     for (int i = 0; i < [allItems count]; i++)
     {
         ToMItem *item = [allItems objectAtIndex:i];
@@ -365,7 +438,15 @@
         {
             [self cancelNotification:item];
         }
+        NSString *date = [sectionIndexFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceReferenceDate:[item schedTime]]];
+        if ([sectionTitles count] == 0 || [(NSString *)[sectionTitles lastObject] compare:date] != NSOrderedSame)
+        {
+            [sectionRows addObject:[NSNumber numberWithInt:nrows]];  // number of rows prior
+            [sectionTitles addObject:date];
+        }
+        nrows++;
     }
+    [sectionRows addObject:[NSNumber numberWithInt:nrows]];
 }
 
 - (void)scheduleNotification:(ToMItem *)item

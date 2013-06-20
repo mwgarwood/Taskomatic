@@ -51,7 +51,7 @@
 
 - (void)didAcceptAutocompletion:(NSString *)autoString
 {
-    if ([_item duration] > 0 && [_item startTime] == 0)
+    if ([_item duration] > 0 || [_item startTime] > 0)
     {
         return;
     }

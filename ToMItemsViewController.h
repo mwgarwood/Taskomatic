@@ -15,6 +15,9 @@
 {
     CALayer *progressLine;
     NSMutableDictionary *notifications;
+    NSMutableArray *sectionRows;
+    NSMutableArray *sectionTitles;
+    NSDateFormatter *sectionIndexFormatter;
 }
 
 @property (nonatomic, strong) ToMItem *editItem;
